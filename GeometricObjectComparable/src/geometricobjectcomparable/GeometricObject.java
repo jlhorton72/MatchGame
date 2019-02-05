@@ -67,8 +67,13 @@ package geometricobjectcomparable;
     public abstract double getPerimeter();
     
     /** Static method to find max */
-    public static int getMax(){
-        return 0;
+    public static void getMax(GeometricObject first, GeometricObject second){
+        double areaOne = first.getArea();
+        double areaTwo = second.getArea();
+        if (areaOne < areaTwo)
+            System.out.println("The second one is larger");
+        if (areaTwo < areaOne)
+            System.out.println("The first one is larger");           
     } // end of getMax
     
 } // end of class
