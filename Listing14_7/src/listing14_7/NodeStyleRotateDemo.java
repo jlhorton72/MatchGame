@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
+
 /**
  *
  * @author jh0375800
@@ -20,7 +21,7 @@ public class NodeStyleRotateDemo extends Application{
     Button btOK = new Button("OK");
     btOK.setStyle("-fx-border-color: blue;");
     pane.getChildren().add(btOK);    
-    
+    btOK.setStyle("-fx-border-color: yellow;");
     pane.setRotate(45); // Rotate pane 45 degrees
     pane.setStyle(
       "-fx-border-color: red; -fx-background-color: lightgray;");
