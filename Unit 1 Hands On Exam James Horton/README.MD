@@ -4,7 +4,7 @@ This assignment is to create the hangman from the Hangman's game using javafx co
 
 ## Example Output
 
-![Sample Output](README.jpg)
+![Sample Output](Exam1HandsOnScreenShot.jpg)
 
 ## Analysis Steps
 This exam breaks down to using the line, arc, and circle shapes of javafx and displaying them to shape the hangman.
