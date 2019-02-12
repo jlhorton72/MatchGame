@@ -21,13 +21,15 @@ import javafx.event.EventHandler;
  * @author jh0375800
  */
 public class ControlCircleWithoutEventHandling extends Application{
+    // class level variable
+    private CirclePane circlePane = new CirclePane();
     @Override
     public void start(Stage primaryStage){
-        StackPane pane = new StackPane();
-        Circle circle = new Circle(50);
-        circle.setStroke(Color.BLACK);
-        circle.setFill(Color.WHITE);
-        pane.getChildren().add(circle);
+//        StackPane pane = new StackPane();
+//        Circle circle = new Circle(50);
+//        circle.setStroke(Color.BLACK);
+//        circle.setFill(Color.WHITE);
+//        pane.getChildren().add(circle);
         
         HBox hBox = new HBox();
         hBox.setSpacing(10);
@@ -37,8 +39,12 @@ public class ControlCircleWithoutEventHandling extends Application{
         
         hBox.getChildren().addAll(btEnlarge, btShrink);
         
+        // create and register the handler
+        btEnlarge.setOnAction(new EnlargeHandler());
+        btShrink.setOnAction(new ShrinkHandler());
+        
         BorderPane borderPane = new BorderPane();
-        borderPane.setCenter(pane);
+        borderPane.setCenter(circlePane);
         borderPane.setBottom(hBox);
         BorderPane.setAlignment(hBox, Pos.CENTER);
         
@@ -48,6 +54,25 @@ public class ControlCircleWithoutEventHandling extends Application{
         primaryStage.show();
         
     } // end of start
+        
+    /**
+     * This class handles events for our enlarge button
+     * it is an inner class
+     */
+    class EnlargeHandler implements EventHandler<ActionEvent>{
+        @Override
+        public void handle(ActionEvent e){
+            circlePane.enlarge();
+        } // end of handle
+    } // end of EnlargeHandler
+    
+    class ShrinkHandler implements EventHandler<ActionEvent>{
+         @Override
+        public void handle(ActionEvent e){
+            circlePane.shrink();
+        } // end of handle
+    } // end of ShrinkHandler
+    
     /**
      * @param args the command line arguments
      */
@@ -55,4 +80,25 @@ public class ControlCircleWithoutEventHandling extends Application{
         launch(args);// TODO code application logic here
     } // end of main
     
-} // end of class
+} // end of class ControlCircleWithoutEventHandling
+
+class CirclePane extends StackPane {
+    // class field
+    private Circle circle = new Circle(50);
+    
+    // constructor for the class
+    public CirclePane(){
+        getChildren().add(circle);
+        circle.setStroke(Color.BLACK);
+        circle.setFill(Color.WHITE);
+    } // end of constructor
+    
+    public void enlarge(){
+        circle.setRadius(circle.getRadius() + 2);
+    } // end of method enlarge
+    
+    public void shrink(){
+        circle.setRadius(circle.getRadius() > 2 ? circle.getRadius() - 2 : circle.getRadius());
+    } // end of ,ethod shrink
+    
+} // end of CirclePane class
