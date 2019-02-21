@@ -29,7 +29,7 @@ public class PathTransitionDemo extends Application {
     // Add circle and rectangle to the pane
     pane.getChildren().add(circle);          
     
-    
+     
     // Create a scene and place it in the stage
     Scene scene = new Scene(pane, 140, 140);
     primaryStage.setTitle("PathTransitionDemo"); // Set the stage title
