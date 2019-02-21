@@ -4,7 +4,7 @@ This assignment is to update Listing 14.21 to animate the clock and add start an
 
 ## Example Output
 
-![Sample Output](Clock.png)
+![Sample Output](Clock.jpg)
 
 ## Analysis Steps
 This assignment is to build and display the clock. Next, animate it so it appears to function like a wall clock.
