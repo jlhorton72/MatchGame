@@ -1,26 +1,21 @@
-# RaceCar Excercise 15_29
+# RaceCar Excercise 15_32
 
-This assignment is to create a car and move it across the screen. Also use keys to speed up, slow down and pause the car.
+This assignment is to update Listing 14.21 to animate the clock and add start and stop button functionality.
 
 ## Example Output
 
-![Sample Output](Racecar.jpg)
+![Sample Output](Clock.jpg)
 
 ## Analysis Steps
-This assignment is broken down by building a car object from circles and rectangles. Then placing them on the screen and animating it. Additionally,
-use key presses to speed it up on the up arrow, slow it down on the down arrow, and pause on any other key press..
+This assignment is to build and display the clock. Next, animate it so it appears to function like a wall clock.
 
 ### Design
-Create circles for the tires.
-Create the rectangles for the body and roof.
-Place all of these on a pane.
-Place the pane on a border pane and the border on the scene.
-Next was the animation of getting the car across the screen.
-Next was getting the key press events to slow down or speed up.
+Use existing code for the display of clock.
+Next add the animation to the clock.
+Finaaly add functionality to the start and stop buttons with lambda expressions.
 
 ### Testing
-This was a test as you go.  Build each individual piece, placing it and checking to see if it needs to move.
-Once all items placed, added animation and played with speeds.
+This was a test as you go.
 
 
 
