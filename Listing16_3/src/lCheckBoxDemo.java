@@ -1,8 +1,8 @@
 /*
  * Name:        James Horton
- * Date:        02/21/2019
+ * Date:        02/26/2019
  * Program:     button demo
- * Purpose:     demo some butons
+ * Purpose:     demo check boxes
  */
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
