@@ -1,18 +1,19 @@
-# RaceCar Excercise 15_32
+#  TextFieldDemo Excercise 16_6
 
-This assignment is to update Listing 14.21 to animate the clock and add start and stop button functionality.
+This assignment is to write a program that sets the horizontal-alignment and column-size properties of a text field dynamically, as shown in Figure 16.38a.
 
 ## Example Output
 
-![Sample Output](Clock.jpg)
+![Sample Output](Demo.jpg)
 
 ## Analysis Steps
-This assignment is to build and display the clock. Next, animate it so it appears to function like a wall clock.
+This assignment is to create a textfield for typing that havethe width modified by a second textfield setting the width to the input number.
 
 ### Design
-Use existing code for the display of clock.
-Next add the animation to the clock.
-Finaaly add functionality to the start and stop buttons with lambda expressions.
+Create each piece.
+Add each piece to appropriate panes.
+Add panes to scene.
+Finaaly add functionality to the radio buttons and to the setColSize textfield.
 
 ### Testing
 This was a test as you go.
