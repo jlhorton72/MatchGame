@@ -35,10 +35,19 @@ public class MatchGame extends Application{
     //private ImageView[] ImageViews = new ImageView;
         ArrayList<ImageView> imageViews = new ArrayList<ImageView>();
         for ( int lcv = 1; lcv <= 18; lcv++ ){
-            ImageView imageView = new ImageView("pictures/" + lcv + ".jpg");
+            ImageView imageView = new ImageView("images/image" + lcv + ".jpg");
             imageViews.add(imageView);
         } // end of for loop
     } // end of load images
+    
+    // randomly choose 16 of 18 pics to load into the display
+        // this should be a new arraylist??
+        // this may be called arraylist imageDisplayNum
+    
+    // randomly choose on of those 16 to be the compare to main image
+        // 
+    // onclick event for each image compare to the main image
+    
     
     @Override
     public void start(Stage primaryStage){
