@@ -35,7 +35,7 @@ public class MatchGame extends Application{
     //private ImageView[] ImageViews = new ImageView;
         ArrayList<ImageView> imageViews = new ArrayList<ImageView>();
         for ( int lcv = 1; lcv <= 18; lcv++ ){
-            ImageView imageView = new ImageView("Waterfalls/" + lcv + ".jpg");
+            ImageView imageView = new ImageView("pictures/" + lcv + ".jpg");
             imageViews.add(imageView);
         } // end of for loop
     } // end of load images
