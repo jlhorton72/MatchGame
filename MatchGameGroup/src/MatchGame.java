@@ -40,6 +40,15 @@ public class MatchGame extends Application{
         } // end of for loop
     } // end of load images
     
+    // randomly choose 16 of 18 pics to load into the display
+        // this should be a new arraylist??
+        // this may be called arraylist imageDisplayNum
+    
+    // randomly choose on of those 16 to be the compare to main image
+        // 
+    // onclick event for each image compare to the main image
+    
+    
     @Override
     public void start(Stage primaryStage){
          GridPane pane = new GridPane(); 
