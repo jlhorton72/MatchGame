@@ -1,8 +1,10 @@
 
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Cell;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -28,6 +30,15 @@ public class MatchGame extends Application{
         // create status label
     private Label lblStatus = new Label ("Player 1's turn");
     
+        // make the list of images
+    public void loadImages(){
+    //private ImageView[] ImageViews = new ImageView;
+        ArrayList<ImageView> imageViews = new ArrayList<ImageView>();
+        for ( int lcv = 1; lcv <= 18; lcv++ ){
+            ImageView imageView = new ImageView("Waterfalls/" + lcv + ".jpg");
+            imageViews.add(imageView);
+        } // end of for loop
+    } // end of load images
     
     @Override
     public void start(Stage primaryStage){
