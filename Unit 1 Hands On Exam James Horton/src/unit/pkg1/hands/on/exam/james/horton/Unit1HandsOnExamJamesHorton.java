@@ -1,3 +1,5 @@
+// great comments
+
 /*
  * Name:        James Horton
  * Date:        02/12/2019
@@ -21,6 +23,9 @@ import javafx.scene.shape.Circle;
  */
 public class Unit1HandsOnExamJamesHorton extends Application {
     public void start(Stage primaryStage){
+        
+        // excellent code. could be iproved by moving logical components to methods
+        
             // Create the arc for the base of hangman
         Arc arc = new Arc(200, 450, 125, 40, 0, 180);
         arc.setFill(Color.GREEN);
