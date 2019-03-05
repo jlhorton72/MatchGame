@@ -2,12 +2,14 @@
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Cell;
+// import javafx.scene.control.Cell;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import java.util.Random;
+import javafx.scene.image.Image;
 
 /*
  * Deveolpers:  Jim Horton, Jay Allen, Michael Wilson
@@ -25,26 +27,41 @@ public class MatchGame extends Application{
     private String whoseTurn = "Player 1";
     
         // create the 4 by 4 grid
-    private Cell[][] cell = new Cell[4][4];
+    //private Cell[][] cell = new Cell[4][4];
     
         // create status label
     private Label lblStatus = new Label ("Player 1's turn");
     
+        // Random numbers
+    Random rand = new Random();
         // make the list of images
-    public void loadImages(){
-    //private ImageView[] ImageViews = new ImageView;
-        ArrayList<ImageView> imageViews = new ArrayList<ImageView>();
+    public ArrayList<ImageView> imageViews = new ArrayList<ImageView>();
+    public void loadImages(){           
         for ( int lcv = 1; lcv <= 18; lcv++ ){
             ImageView imageView = new ImageView("images/image" + lcv + ".jpg");
             imageViews.add(imageView);
         } // end of for loop
     } // end of load images
     
-    // randomly choose 16 of 18 pics to load into the display
-        // this should be a new arraylist??
-        // this may be called arraylist imageDisplayNum
-    
-    // randomly choose on of those 16 to be the compare to main image
+    public ArrayList<Integer> imgSet = new ArrayList<Integer>();
+    // randomly choose 8 of 18 pics to load into the display
+    public void setImageList(){
+        for (int idx = 0; idx < 8; idx++){
+            int ranImg = rand.nextInt(17);
+            ranImg ++;
+            imgSet.add(ranImg);
+            imgSet.add(ranImg);
+        } // end of for loop
+        
+        
+    } // end of setImages
+  
+    public int setImageOnScreen(){
+        int index = rand.nextInt(imgSet.size());
+        imgSet.remove(index);
+        return index;        
+    } // end of setImageOnScreen
+    // randomly choose on of those 8 to be the compare to main image
         // 
     // onclick event for each image compare to the main image
     
@@ -54,7 +71,8 @@ public class MatchGame extends Application{
          GridPane pane = new GridPane(); 
     for (int i = 0; i < 4; i++){
       for (int j = 0; j < 4; j++)
-        pane.add(cell[i][j] = new Cell(), j, i);
+        pane.add(imageViews.get(setImageOnScreen()), i, j);
+        //pane.add(new ImageView(imageViews(setImageOnScreen()),[i][j]));// = new ImageView(), j, i);
     } // end of outer for loop
     
     BorderPane bPane = new BorderPane();
