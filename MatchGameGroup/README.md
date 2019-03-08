@@ -1,6 +1,6 @@
 # Project Title
 
-Create a matching color matching game using colors!
+Create a matching color game with JavaFX!
 
 ## Example Output
 
