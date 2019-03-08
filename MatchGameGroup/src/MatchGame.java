@@ -86,34 +86,78 @@ public class MatchGame extends Application {
 
     //create a new class for adding the images
     private class img extends StackPane {
+private class img extends StackPane {
 
         // create an array of images to choose from
         FadeTransition ft;
 
-        private ImageView[] imgs = new ImageView[]{ // ImageView.
-        };
-
-        // private Rectangle rect = new Rectangle( 50,50);  // draws grid?
+//        private ImageView[] imgs = new ImageView[]{ 
+//            for (int lcv = 1; lcv <= 16; lcv++) {
+//            ImageView imageView = new ImageView("images/image" + lcv + ".jpg");
+//            imgs.add(imageView);
+//        } // end of for loop
+//        // ImageView.
+//        };
+            // useing color and rectangles for testing
+        private Color[] color = new Color[]{
+            Color.AQUA,
+            Color.GREEN,
+            Color.BLANCHEDALMOND,
+            Color.YELLOW,
+            Color.DARKCYAN,
+            Color.CADETBLUE,
+            Color.BLACK,
+            Color.OLIVE
+        }; // loads color array
+        
+            
+         private Rectangle pics = new Rectangle( 50,50);  // draws grid?
         // Constructor for img class
         public img(int imgSelector) {
-            //
-        }
+            this.setStyle("-fx-border-color: black;");
+            pics.setFill(color[imgSelector]);
+            setAlignment(Pos.CENTER);
+            getChildren().add(pics);
+            this.pics.setOpacity(0);
+        } // end of img constructor
 
-        private void hide() {
+        private void close() {
             // this uses FadeTransition
-        }
+            FadeTransition ft = new FadeTransition(Duration.seconds(1), this.pics);
+            ft.setToValue(0);
+            ft.play();
+        } // end of hide
 
-        private void show() {
-
-        }
+        private void open() {
+            this.pics.setOpacity(1);
+        } // end of show
 
         private void Winner() {
-            //int counter = 6 - score;  // score is  variable
-            System.out.println("you won the game!");
-        }
+            int counter = 4 - score;  // score is  variable
+            if (score == 4){
+                txt.setText("You won the game!");
+                setFont(Font.font(30));
+                // System.out.println("You won the game!");
+            } // end of if
+            
+        } // end of Winner
 
-        private void sameImage(Image chosen) {
+        private void sameImage(img chosen) {
             //if statement with else
+            if (this.pics.getFill().equals(selected.pics.getFill())) {
+                //System.out.println("True");
+                isAMatch = true;
+                mouseClicks = 0;
+
+            } else {
+               // System.out.println("False");
+                isAMatch = false;
+                mouseClicks = 0;
+            }
+        } // end of sameImage
+
+        private void setFont(Font font) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
 
     }// end of img class
